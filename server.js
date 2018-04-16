@@ -21,7 +21,7 @@ const getTimeObj = (time) => {
       unix: getTimeStamp(time),
       natural: monthName(date) + ' ' + date.getDate() + ', ' + date.getFullYear()
     }
-  } else if (time[0].match(/[0-9]/g)) {
+  } else if (time.match(/^[0-9]*$/)) {
     let date = new Date(parseInt(time));
     return {
       unix: time,

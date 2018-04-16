@@ -1,0 +1,29 @@
+{
+  "name": "timestamp-microservice",
+  "version": "0.0.1",
+  "description": "Timestamp Microservice",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmemorgan/timestamp-microservice.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "timestamp"
+  ],
+  "author": "Wilfred Morgan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmemorgan/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/wmemorgan/timestamp-microservice#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

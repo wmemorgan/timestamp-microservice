@@ -17,7 +17,7 @@ const getTimeObj = (time) => {
     let date = new Date(getTimeStamp(time));
     return {
       unix: getTimeStamp(time),
-      natural: time
+      natural: monthName(date) + ' ' + date.getDate() + ', ' + date.getFullYear()
     }
   } else {
     let date = new Date(parseInt(time));
@@ -26,7 +26,6 @@ const getTimeObj = (time) => {
       natural: monthName(date) + ' ' + date.getDate() + ', ' + date.getFullYear()
     }
   }
-
 }
 
 app.get('/', (req, res) => {

@@ -3,14 +3,15 @@ const express = require('express'),
       path = require('path'),
       port = process.env.PORT || 8080,
       regexList = [/January/, /February/, /March/, /April/, /May/, /June/, 
-                  /July/, /August/, /September/, /October/, /November/, /December/];
+                   /July/, /August/, /September/, /October/, /November/, /December/];
 
 const getTimeStamp = (time) => {
   return Date.parse(time);
 }
 
 const monthName = (date) => {
-  mlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  mlist = ["January", "February", "March", "April", "May", "June", 
+           "July", "August", "September", "October", "November", "December"];
   return mlist[date.getMonth()];
 };
 

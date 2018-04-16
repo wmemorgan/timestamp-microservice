@@ -1,7 +1,9 @@
 const express = require('express'),
       app = express(),
       path = require('path'),
-      port = process.env.PORT || 8080;
+      port = process.env.PORT || 8080,
+      regexList = [/January/, /February/, /March/, /April/, /May/, /June/, 
+                  /July/, /August/, /September/, /October/, /November/, /December/];
 
 const getTimeStamp = (time) => {
   return Date.parse(time);
@@ -13,18 +15,23 @@ const monthName = (date) => {
 };
 
 const getTimeObj = (time) => {
-  if (time[0].match(/[A-Za-z]/g)) {
+  if (time[0].match(/[A-Za-z]/g) && regexList.some(rx => rx.test(time))) {
     let date = new Date(getTimeStamp(time));
     return {
       unix: getTimeStamp(time),
       natural: monthName(date) + ' ' + date.getDate() + ', ' + date.getFullYear()
     }
-  } else {
+  } else if (time[0].match(/[0-9]/g)) {
     let date = new Date(parseInt(time));
     return {
       unix: time,
       natural: monthName(date) + ' ' + date.getDate() + ', ' + date.getFullYear()
     }
+  } else {
+      return {
+        unix: null,
+        natural: null
+      }
   }
 }
 
